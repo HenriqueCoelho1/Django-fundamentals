@@ -2,8 +2,9 @@ from django.shortcuts import render
 
 
 def index(request):
-    return render(request, "index.html")
+    data = {"movie": "a good data"}
+    return render(request, "index.html", data)
 
 
-def contatc(request):
+def contact(request):
     return render(request, "contact.html")
