@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Product
 
 
@@ -15,6 +15,7 @@ def contact_page(request):
 
 
 def product_page(request, id):
-    product = Product.objects.get(id=id)
+    # product = Product.objects.get(id=id)
+    product = get_object_or_404(Product, id=id)
     context = {"product": product}
     return render(request, "product.html", context)
